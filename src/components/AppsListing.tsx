@@ -41,12 +41,6 @@ export default function AppListing() {
   return (
     <section className="py-16 bg-[#030303]">
       <div className="container mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-3xl font-bold text-center text-white mb-12">
-          Our Apps
-        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {apps.map((app, index) => (
             <motion.div
@@ -55,7 +49,7 @@ export default function AppListing() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}>
               <Card className="bg-gray-800 border-gray-700">
-                <CardHeader className="flex flex-row items-center gap-4">
+                <CardHeader className="flex flex-row items-center gap-4 justify-center">
                   <img
                     src={app.icon || "/placeholder.svg"}
                     alt={`${app.name} icon`}
@@ -66,10 +60,12 @@ export default function AppListing() {
                   <CardTitle className="text-xl text-white">{app.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-300">{app.description}</CardDescription>
+                  <CardDescription className=" flex text-gray-300 min-h-10 items-center justify-center">
+                    {app.description}
+                  </CardDescription>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className="w-full bg-green-600 hover:bg-green-700">
+                  <Button asChild className="w-full">
                     <a href={app.playStoreLink} target="_blank" rel="noopener noreferrer">
                       Get on Google Play
                     </a>

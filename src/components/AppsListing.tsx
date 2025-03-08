@@ -48,7 +48,7 @@ export default function AppListing() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}>
-              <Card className="bg-gray-800 border-gray-700">
+              <Card className="bg-gray-950 border-gray-800">
                 <CardHeader className="flex flex-row items-center gap-4 justify-center">
                   <img
                     src={app.icon || "/placeholder.svg"}
